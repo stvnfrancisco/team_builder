@@ -21,16 +21,10 @@ describe(Team) do
     end
   end
 
-  describe('#members') do
+  describe('#groups') do
     it("initially returns an empty array of saved members") do
       test_team = Team.new("team one")
-      expect(test_team.members()).to(eq([]))
-    end
-  end
-
-  describe(".all") do
-    it("is empty at first") do
-      expect(Team.all()).to(eq([]))
+      expect(test_team.groups()).to(eq([]))
     end
   end
 
@@ -39,6 +33,12 @@ describe(Team) do
       test_team = Team.new("team one")
       test_team.save()
       expect(Team.all()).to(eq([test_team]))
+    end
+  end
+
+  describe(".all") do
+    it("is empty at first") do
+      expect(Team.all()).to(eq([]))
     end
   end
 
@@ -60,12 +60,12 @@ describe(Team) do
     end
   end
 
-  # describe('#add_member') do
-  #   it("adds a new member to a team") do
-  #     test_team = Team.new("team one")
-  #     test_member = Member.new("Mike Millions")
-  #     test_team.add_member(test_member)
-  #     expect(test_team.members()).to(eq([test_member]))
-  #   end
-  # end
+  describe('#add_member') do
+    it("adds a new member to a team") do
+      test_team = Team.new("team one")
+      test_member = Member.new("Mike Millions")
+      test_team.add_member(test_member)
+      expect(test_team.groups()).to(eq([test_member]))
+    end
+  end
 end

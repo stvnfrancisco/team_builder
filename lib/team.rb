@@ -4,7 +4,7 @@ class Team
   define_method(:initialize) do |name|
     @name = name
     @id = @@teams.length().+(1)
-    @members = []
+    @groups = []
   end
 
   define_method(:name) do
@@ -15,8 +15,8 @@ class Team
     @id
   end
 
-  define_method(:members) do
-    @members
+  define_method(:groups) do
+    @groups
   end
 
   define_singleton_method(:all) do
@@ -39,5 +39,9 @@ class Team
       end
     end
     found_team
+  end
+
+define_method(:add_member) do |member|
+    @groups.push(member)
   end
 end
