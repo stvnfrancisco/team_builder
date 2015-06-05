@@ -1,0 +1,12 @@
+<h3>Here are all the members in this group:</h3>
+
+<ul>
+  <% @team.groups().each() do |group| %>
+    <li><a href="/members/<%= group.id() %>"> <%= group.name() %></a></li>
+
+    <% end %>
+
+</ul>
+
+<a href="/teams/<%= @team.id %>/members/new">Add a new member</a>
+<a href="/">Return to Home Page</a>

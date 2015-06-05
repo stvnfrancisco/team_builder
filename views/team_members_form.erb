@@ -1,0 +1,12 @@
+<h1>Add a member to <%= @team.name() %> </h1>
+
+<form action="/members" method="post">
+  <input id='team_id' name='team_id' type='hidden' value='<%= @team.id() %>'>
+
+  <label for='name'>Member's name:</label>
+  <input id='name' name='name' type='text'>
+
+  <button type="submit">Add Member</button>
+</form>
+
+<a href="/"><h4>back to home page</h4></a>
