@@ -25,7 +25,7 @@ post('/teams') do
   erb(:success)
 end
 
-get('/teams/:id') do
+get('/members/:id') do
   @member = Member.find(params.fetch("id"))
   erb(:member)
 end
@@ -52,9 +52,9 @@ end
 post('/members') do
   name = params.fetch('name')
 
-  @member = Vehicle.new(name)
+  @member = Member.new(name)
   @member.save()
   @team = Team.find(params.fetch('team_id').to_i())
-  @twam.add_member(@member)
+  @team.add_member(@member)
   erb(:success)
 end
