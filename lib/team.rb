@@ -1,4 +1,5 @@
 class Team
+  attr_reader(:name, :id, :groups)
   @@teams = []
 
   define_method(:initialize) do |name|
@@ -7,17 +8,17 @@ class Team
     @groups = []
   end
 
-  define_method(:name) do
-    @name
-  end
-
-  define_method(:id) do
-    @id
-  end
-
-  define_method(:groups) do
-    @groups
-  end
+  # define_method(:name) do
+  #   @name
+  # end
+  #
+  # define_method(:id) do
+  #   @id
+  # end
+  #
+  # define_method(:groups) do
+  #   @groups
+  # end
 
   define_singleton_method(:all) do
     @@teams
