@@ -25,10 +25,10 @@ post('/teams') do
   erb(:success)
 end
 
-# get('/members/:id') do
-#   @member = Member.find(params.fetch("id"))
-#   erb(:member)
-# end
+get('/members/:id') do
+  @member = Member.find(params.fetch("id"))
+  erb(:member)
+end
 
 get('/teams/:id') do
   @team = Team.find(params.fetch('id').to_i())
