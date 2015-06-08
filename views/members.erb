@@ -3,8 +3,16 @@
 <h3>Here are the members on the team: </h3>
 <ul>
   <% @members.each() do |member| %>
-    <li><a href="/members/<%= member.id() %>"> <%= member.name() %></a></li>
+    <li><%= member.name() %></li>
   <% end %>
 </ul>
 
 <a href="/">back to home page</a>
+
+
+
+
+
+
+
+<li><a href="/members/<%= member.id() %>"> <%= member.name() %></a></li>

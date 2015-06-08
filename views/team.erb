@@ -2,8 +2,7 @@
 
 <ul>
   <% @team.groups().each() do |group| %>
-    <li><a href="/members/<%= group.id() %>"> <%= group.name() %></a></li>
-
+  <li><a href="/members/<%= group.id() %>"> <%= group.name() %></a></li>
     <% end %>
 
 </ul>
