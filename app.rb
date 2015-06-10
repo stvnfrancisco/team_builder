@@ -57,4 +57,4 @@ post('/members') do
   @team = Team.find(params.fetch('team_id').to_i())
   @team.add_member(@member)
   erb(:success)
-end
+ end
